@@ -1,0 +1,58 @@
+﻿@model IEnumerable<TaskViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Tasks</h1>
+<br>
+<a class="btn btn-primary" asp-action="Create">Add New Task</a>
+<hr>
+@if (Model.Count() > 0)
+{
+
+
+    <div class="row">
+
+        <div class="col-sm-6">
+            <div class="card">
+
+
+                @foreach (var item in Model)
+                {
+
+
+                    <div class="card-body">
+                    
+
+                      
+                        <img class="card-img-top" height="100" , width="100" style="border-radius=50;" src="~/Files//Images/@item.imageName" alt="Card image cap">
+                        <h5 class="card-title">@item.TaskName</h5>
+                        <p class="card-text">@item.TaskDescreption</p>
+                        <p class="card-text">@Html.DisplayFor(a=>item.Object.ObjectaName)</p>
+                        <p class="card-text">@item.TimeEndTheTask</p>
+
+                        <partial name="_CommonCode\CoomoCode", model="@item.id">
+                    </div>
+                    <hr>
+                }
+            </div>
+        </div>
+        <div class="col-sm-6 justify-content-lg-end">
+            <div class="">
+                <h2>To Do List</h2>
+                <hr/>
+                <p class="mt-5 font-weight-bold text-lg-center">
+                    ″You can always change your plan, 
+                    but only if you have one. 
+                    I’m a big believer in to-do lists. 
+                    It helps us break life into small steps.
+                    I once put “get tenure” on my to-do list.
+                    That was naïve. The most useful to-do list breaks tasks into small steps.
+                    It’s like when I encourage Logan to clean his room by picking up one thing at a time.″
+                </p>
+            </div>
+        </div>
+    </div>
+}else{
+    <h2>There's No Task Yet!</h2>
+}

@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "CheckYourInpox";
+    Layout = "~/Views/Shared/AuthLayout.cshtml";
+}
+
+
+<div class="main-agileinfo">
+    <div class="agileits-top">
+        <form asp-action="SendEmailTOretrive">
+            <div>
+                <p>Check Your Inbox !!</p>
+                <a href="https://mail.google.com/mail/u/0/?pli=1#inbox">Click here !</a>
+            </div>
+        </form>
+    </div>
+</div>
+@section ValidationForRegister{
+    <partial name="_ValidationScriptsPartial" />
+
+}
+

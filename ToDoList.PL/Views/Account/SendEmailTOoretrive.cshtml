@@ -1,0 +1,20 @@
+﻿@model ResetPasswordViewModel
+@{
+    ViewData["Title"] = "SendEmailTOoretrive";
+    Layout = "~/Views/Shared/AuthLayout.cshtml";
+}
+
+<div class="main-agileinfo">
+    <div class="agileits-top">
+        <form asp-action="SendEmailTOoretrive">
+            <div asp-validation-summary="All"></div>
+            <input asp-for="Password" placeholder="Enter Your New Password">
+            <span asp-validation-for="Password"></span>
+            <br>
+            <input asp-for="ConfirmPassword" placeholder="Confirm Your Password">
+            <span asp-validation-for="ConfirmPassword"></span>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>

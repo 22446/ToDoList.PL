@@ -1,0 +1,23 @@
+﻿@model RolesViewModel
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+
+<br>
+
+<form asp-action="Create" , enctype="multipart/form-data">
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label asp-for="Name">Enter The Task Name</label>
+            <input asp-for="Name" class="form-control">
+        </div>
+    </div>
+    <input type="submit" value="Create" class="btn btn-primary">
+    <button asp-action="Index" class="btn btn-info">Back</button>
+</form>
+
+

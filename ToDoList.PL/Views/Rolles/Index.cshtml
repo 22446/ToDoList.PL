@@ -1,0 +1,45 @@
+﻿@model IEnumerable<RolesViewModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<a class="btn btn-primary" asp-action="Create">Add New Role</a>
+<br>
+<hr>
+@if (Model.Count() > 0)
+{
+    <h1>All Roles</h1>
+    <br>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">@Html.DisplayNameFor(a=>a.ID)</th>
+                <th scope="col">@Html.DisplayNameFor(a=>a.Name)</th>
+                <th scope="col">Details</th>
+                <th scope="col">Delete</th>
+                <th scope="col">Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ID</td>
+                    <td>@item.Name</td>
+                    
+                    <td><a asp-action="Details" asp-route-id="@item.ID">Details</a></td>
+                    <td><a asp-action="Delete" asp-route-id="@item.ID">Delete</a></td>
+                    <td><a asp-action="Edit" asp-route-id="@item.ID">Edit</a></td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-warning" role="alert">
+        <h4 class="alert-heading">There is no Roles !</h4>
+    </div>
+}

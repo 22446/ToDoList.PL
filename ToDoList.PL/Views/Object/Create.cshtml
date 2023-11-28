@@ -1,0 +1,18 @@
+﻿@model Objects
+@{
+    ViewData["Title"] = "Crate";
+}
+
+<h1>Create</h1>
+
+<form asp-action="Create" enctype="multipart/form-data">
+    <div class="form-group">
+        <label class="col-form-label" asp-for="ObjectaName"></label>
+        <input asp-for="ObjectaName" class="form-control" placeholder="Enter Code">
+        <span asp-validation-for="ObjectaName" class="text-danger"></span>
+    </div>
+  
+    <input type="submit" value="Create" class="btn btn-primary"> |
+    <a asp-action="Index" type="submit" class="btn btn-info">Back</a>
+
+</form>

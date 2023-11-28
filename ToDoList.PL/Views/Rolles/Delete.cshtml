@@ -1,0 +1,19 @@
+﻿@model RolesViewModel
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Delete</h1>
+
+<form asp-action="DeleteConfirm" , enctype="multipart/form-data">
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control " readonly>
+        </div>
+
+        <input type="submit" value="Delete" class="btn btn-danger"> |
+        <button asp-action="Index" class="btn btn-info">Back</button>
+    </div>
+</form>

@@ -1,0 +1,19 @@
+﻿@model TaskViewModel
+@{
+    ViewData["Title"] = "Upadte";
+}
+
+<h1>Upadte</h1>
+
+<form asp-action="Upadte" enctype="multipart/form-data">
+
+    <partial name="CreateUpdatePartil/CreateUpdateParialView" />
+    <input type="submit" value="Edit" class="btn btn-primary">
+    <button asp-action="Index" class="btn btn-info">Back</button>
+</form>
+@section Validation
+{
+ 
+    <partial name="_ValidationScriptsPartial">
+
+}

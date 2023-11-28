@@ -1,0 +1,52 @@
+﻿@model IEnumerable<UserViewModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br>
+<hr>
+@if (Model.Count() > 0)
+{
+    <h1>All Users</h1>
+    <br>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">@Html.DisplayNameFor(a=>a.Id)</th>
+                <th scope="col">@Html.DisplayNameFor(a=>a.Fname)</th>
+                <th scope="col">@Html.DisplayNameFor(a=>a.Lname)</th>
+                <th scope="col">@Html.DisplayNameFor(a=>a.PhoneNumber)</th>
+                <th scope="col">@Html.DisplayNameFor(a=>a.Email)</th>
+                <th scope="col">@Html.DisplayNameFor(a=>a.Roles)</th>
+                <th scope="col">Details</th>
+                <th scope="col">Delete</th>
+                <th scope="col">Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Fname</td>
+                    <td>@item.Lname</td>
+                    <td>@item.PhoneNumber</td>
+                    <td>@item.Email</td>
+                    <td>@string.Join(",",item.Roles)</td>
+                    <td><a asp-action="Details" asp-route-id="@item.Id">Details</a></td>
+                    <td><a asp-action="Delete" asp-route-id="@item.Id">Delete</a></td>
+                    <td><a asp-action="Edit" asp-route-id="@item.Id">Edit</a></td>
+                   
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-warning" role="alert">
+        <h4 class="alert-heading">There is no Users !</h4>
+    </div>
+}
